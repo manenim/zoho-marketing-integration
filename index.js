@@ -69,6 +69,11 @@ app.use(cors())
 //   }
 // });
 
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
 app.use('/waitlist', waitlistRoute)
 
 app.use((req, res, next) => {
