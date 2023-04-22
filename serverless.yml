@@ -29,7 +29,10 @@ functions:
   api:
     handler: index.handler
     events:
-      - httpApi: '*'
+      - httpApi: 
+          path: /waitlist/add
+          method: post
+          cors: true
 
 resources:
   Resources:
