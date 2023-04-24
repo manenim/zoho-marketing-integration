@@ -1,20 +1,18 @@
-const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
-const {
-  DynamoDBDocumentClient,
-  GetCommand,
-  PutCommand,
-} = require("@aws-sdk/lib-dynamodb");
+// const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
+// const {
+//   DynamoDBDocumentClient,
+//   GetCommand,
+//   PutCommand,
+// } = require("@aws-sdk/lib-dynamodb");
 const express = require("express");
 const serverless = require("serverless-http");
-const waitlistRoute = require("./routes/waitlist");
+
 const cors = require('cors')
 
 
 const app = express();
 
-const USERS_TABLE = process.env.USERS_TABLE;
-const client = new DynamoDBClient();
-const dynamoDbClient = DynamoDBDocumentClient.from(client);
+
 
 app.use(express.json());
 app.use(cors())
