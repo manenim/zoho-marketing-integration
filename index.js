@@ -4,6 +4,8 @@
 //   GetCommand,
 //   PutCommand,
 // } = require("@aws-sdk/lib-dynamodb");
+
+
 const express = require("express");
 const serverless = require("serverless-http");
 
@@ -70,6 +72,12 @@ app.use(cors())
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
+})
+
+app.post('/', (req, res) => {
+  const name = req.body.name
+
+  res.send(`Hello ${name}!`)
 })
 
 

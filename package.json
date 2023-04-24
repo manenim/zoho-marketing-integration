@@ -2,6 +2,7 @@
   "name": "escriod-zoho-implementation",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.316.0",
     "@aws-sdk/lib-dynamodb": "^3.316.0",
