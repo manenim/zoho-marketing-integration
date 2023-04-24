@@ -8,7 +8,7 @@
 
 const express = require("express");
 const serverless = require("serverless-http");
-
+const waitlistRoutes = require("./routes/waitlist");
 const cors = require('cors')
 
 // import express from 'express';
@@ -84,6 +84,8 @@ app.post('/', (req, res) => {
 
   res.send(`Hello ${name}!`)
 })
+
+app.use('/waitlist', waitlistRoutes) // added waitlist routes
 
 
 module.exports.handler = serverless(app);
