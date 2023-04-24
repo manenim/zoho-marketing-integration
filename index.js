@@ -6,10 +6,15 @@
 // } = require("@aws-sdk/lib-dynamodb");
 
 
-const express = require("express");
-const serverless = require("serverless-http");
+// const express = require("express");
+// const serverless = require("serverless-http");
 
-const cors = require('cors')
+// const cors = require('cors')
+
+import express from 'express';
+import serverless from 'serverless-http';
+import cors from 'cors';
+
 
 
 const app = express();
