@@ -3,7 +3,7 @@ const validator = require('validator')
 const axios = require('axios')
 
 
-const accessToken = null
+let accessToken = null
 const listKey = process.env.LIST_KEY
 const refreshToken = process.env.REFRESH_TOKEN
 const clientId = process.env.CLIENT_ID
