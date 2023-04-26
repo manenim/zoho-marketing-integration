@@ -1,5 +1,6 @@
-import bcrypt from 'bcrypt'
-import validator from 'validator'
+const bcrypt = require('bcrypt')
+const validator = require('validator')
+const axios = require('axios')
 
 const listKey = process.env.LIST_KEY
 const accessToken = process.env.ACCESS_TOKEN
