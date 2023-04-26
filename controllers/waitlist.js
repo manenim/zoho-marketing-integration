@@ -4,7 +4,6 @@ const axios = require('axios')
 
 
 let accessToken = null
-const listKey = process.env.LIST_KEY
 const refreshToken = process.env.REFRESH_TOKEN
 const clientId = process.env.CLIENT_ID
 const clientSecret = process.env.CLIENT_SECRET
@@ -41,9 +40,35 @@ const addToWaitlist = async (req, res) => {
 
     // validate hashed email
     const match = await bcrypt.compare(email, hashedEmail);
-   res.json({ accessToken, refreshToken})
 
-    // res.send('Success')
+    const url = 'https://marketingautomation.zoho.com/api/v1/json/listsubscribe';
+    const listKey = process.env.LIST_KEY
+
+    // const listkey = '3zb6c2ec6e5eb01250c4d8907fdaeb777cb51dfa03959765cb3b8b9737a8a4785e';
+    const param = {
+    resfmt: 'JSON',
+    listKey,
+    leadinfo: JSON.stringify({
+        'First Name': 'mart',
+        'Last Name': 'uggh',
+        'Lead Email': email,
+    }),
+    };
+    const config = {
+    headers: {
+        'Authorization': 'Zoho-oauthtoken ' + accessToken,
+        'Content-Type': 'application/x-www-form-urlencoded'
+    }
+    };
+
+axios.post(url, param, config)
+  .then(response => {
+    return res.status(200).json( response.data );
+  })
+  .catch(error => {
+    res.json(error);
+  });  
+    
 }
  
 module.exports = {
