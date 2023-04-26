@@ -34,10 +34,10 @@ functions:
   api:
     handler: index.handler
     events:
-      - httpApi: '*'
-        documentation:
-          summary: 'API Gateway'
-          description: 'API Gateway'
+      - httpApi: 'POST /'
+      - httpApi: 'GET /'
+      - httpApi: 'POST /waitlist/add'
+        
 resources:
   Resources:
     UsersTable:
