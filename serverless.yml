@@ -38,50 +38,6 @@ functions:
         documentation:
           summary: 'API Gateway'
           description: 'API Gateway'
-          tags:
-            - 'API Gateway'
-          requestModels:
-            application/json: 'Users'
-          requestParameters:
-            - name: 'userId'
-              in: 'query'
-              required: false
-              description: 'User ID'
-              schema:
-                type: 'string'
-          responses:
-            '200':
-              description: 'Success'
-              content:
-                application/json:
-                  schema:
-                    type: 'object'
-                    properties:
-                      message:
-                        type: 'string'
-                        example: 'Success'
-            '400':
-              description: 'Bad Request'
-              content:
-                application/json:
-                  schema:
-                    type: 'object'
-                    properties:
-                      message:
-                        type: 'string'
-                        example: 'Bad Request'
-            '500':
-              description: 'Internal Server Error'
-              content:
-                application/json:
-                  schema:
-                    type: 'object'
-                    properties:
-                      message:
-                        type: 'string'
-                        example: 'Internal Server Error'
-          
-
 resources:
   Resources:
     UsersTable:
