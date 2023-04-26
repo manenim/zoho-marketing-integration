@@ -1,11 +1,11 @@
 const express = require('express');
-const waitlistFunctions = require('../controllers/waitlist');
+const {addToWaitlist} = require('../controllers/waitlist');
+const { checkTokenExpiry } = require('../middlewares');
 const router = express.Router();
 
-const { addToWaitlist, tokenMiddleware } = waitlistFunctions;
 
 
 
-router.post('/add', tokenMiddleware, addToWaitlist );
+router.post('/add', checkTokenExpiry, addToWaitlist );
 
 module.exports = router;

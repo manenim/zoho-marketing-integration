@@ -34,10 +34,9 @@ functions:
   api:
     handler: index.handler
     events:
-      - httpApi: 'POST /'
-      - httpApi: 'GET /'
-      - httpApi: 'POST /waitlist/add'
+      - httpApi: '*'
         
+          
 resources:
   Resources:
     UsersTable:
