@@ -61,13 +61,21 @@ const addToWaitlist = async (req, res) => {
     }
     };
 
-axios.post(url, param, config)
-  .then(response => {
-    return res.status(200).json( response.data );
-  })
-  .catch(error => {
-    res.json(error);
-  });  
+// axios.post(url, param, config)
+//   .then(response => {
+//     return res.status(200).json( response.data );
+//   })
+//   .catch(error => {
+//     res.json(error);
+//   });
+    
+    try {
+        let response = await axios.post(url, param, config)
+        let data = response.data
+        return res.status(200).json( data );
+    } catch (error) {
+        return res.status(400).json( error );
+    }
     
 }
  
